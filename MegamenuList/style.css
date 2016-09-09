@@ -1,0 +1,13 @@
+.THIS .gbx-submenu {
+    /*display: none;*/
+}
+.THIS.active .gbx-submenu {
+    display: block;
+}
+
+.THIS .gbx-menu-item_img {
+
+}
+.THIS .gbx-menu-item_img.hidden {
+    /*display: none;*/
+}
