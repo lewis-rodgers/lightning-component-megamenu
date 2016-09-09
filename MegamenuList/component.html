@@ -1,0 +1,24 @@
+<aura:component controller="Portal_HeaderNavigationController">
+    <aura:handler name="init" value="{!this}" action="{!c.getData}"/>
+    <aura:attribute name="mouseover" type="String"/>
+    <aura:attribute name="data" type="Object"/>
+    <aura:attribute name="list" type="String" description="The object key name in the returned data from the server."/>
+
+    <div class="{! 'gbx-megamenu-list ' + v.class}" onmouseenter="{!v.mouseover}">
+        <div>{!v.body}</div>
+
+        <div class="gbx-megamenu-tier2">
+            <aura:iteration items="{!v.data}" var="item">
+                <div class="gbx-submenu" onmouseenter="{!c.showImg}" onmouseleave="{!c.hideImg}">
+                    <div class="gbx-menu-item">{!item.Opportunity__r.Name}</div>
+                </div>
+            </aura:iteration>
+        </div>
+
+        <div class="gbx-megamenu-tier3">
+            <aura:iteration items="{!v.data}" var="item">
+                <div aura:id="image" id="gbxSubmenuImage" class="gbx-menu-item_img hidden">{!item.Opportunity__r.Short_Description}</div>
+            </aura:iteration>
+        </div>
+    </div>
+</aura:component>
